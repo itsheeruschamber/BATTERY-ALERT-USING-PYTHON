@@ -1,0 +1,8 @@
+supported python versions 2.7,3.4+
+download the package -->> psutil
+command ::: pip install psutil
+command	::: pip install py-notifier
+
+win10toast: An easy-to-use Python library for displaying Windows 10 Toast Notifications which is useful for Windows GUI development.
+
+command :: pip install win10toast
