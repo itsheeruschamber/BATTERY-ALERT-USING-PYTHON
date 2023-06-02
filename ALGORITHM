@@ -1,0 +1,31 @@
+The first thing we need to do is to import the required packages and modules. In this project, we import psutil, pynotifier packages to make use of their functions.
+
+1 import psutil
+2 from pynotifier import Notification
+
+After the import section, we need to define our variables like :
+battery = psutil.sensors_battery()
+which creates an object for the battery
+
+plugged = battery.power_plugged
+It gives us information on whether the charger is plugged or not.
+
+percent = battery.percent
+It provides us the battery percentage of our system.
+
+1 battery = psutil.sensors_battery()
+2 plugged = battery.power_plugged
+3 percent = battery.percent
+
+In the next section, we start implementing the main part of our project.
+In this section, we check whether the percent (Percentage level of our battery) is below the minimum rate which we fix and if our system is plugged in with a charger or not.
+
+1 if percent <= 30 and plugged!=True:
+2   Notification(
+3       title="Battery Low",
+4       description=str(percent) + "% Battery remain!!",
+5       duration=5,  # Duration in seconds
+6 
+7   ).send()
+
+If the above condition is satisfied, we will send a notification to the OS that our battery percentage is low. Otherwise, we don’t do anything.
